@@ -1,14 +1,7 @@
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+
 const skills = [
-
-    //Frontend
-    { name: "HTML/CSS", level: 80, catagory: "frontend" },
-    { name: "JavaScript", level: 80, catagory: "frontend" },
-    { name: "React.Js", level: 80, catagory: "frontend" },
-    { name: "TypeScript", level: 80, catagory: "frontend" },
-    { name: "Tailwind Css", level: 80, catagory: "frontend" },
-    { name: "Selenium WebDriver/Grid/IDE", level: 90, catagory: "frontend" },
-    { name: "Cypress", level: 80, catagory: "frontend" },
-
     //Backend
     { name: "Java", level: 95, catagory: "backend" },
     { name: "C#", level: 80, catagory: "backend" },
@@ -24,6 +17,16 @@ const skills = [
     { name: "JDBC", level: 90, catagory: "backend" },
     { name: "Node.js", level: 80, catagory: "backend" },
 
+    //Frontend
+    { name: "HTML/CSS", level: 80, catagory: "frontend" },
+    { name: "JavaScript", level: 80, catagory: "frontend" },
+    { name: "React.js", level: 80, catagory: "frontend" },
+    { name: "TypeScript", level: 80, catagory: "frontend" },
+    { name: "Tailwind CSS", level: 80, catagory: "frontend" },
+    { name: "Selenium WebDriver/Grid/IDE", level: 90, catagory: "frontend" },
+    { name: "Cypress", level: 80, catagory: "frontend" },
+
+
     //Tools
     { name: "Jenkins CI/CD", level: 80, catagory: "tools" },
     { name: "Git/Github", level: 90, catagory: "tools" },
@@ -34,11 +37,16 @@ const skills = [
     { name: "JUnit", level: 85, catagory: "tools" },
     { name: "Jira", level: 80, catagory: "tools" },
     { name: "Xray", level: 80, catagory: "tools" },
+];
 
-
-]
+const catagories = ["all", "frontend", "backend", "tools"];
 
 export const SkillsSection = () => {
+    const [activCatag, setActivCatag] = useState("all");
+    const filteredSkills = skills.filter(
+        (skill) => activCatag === "all" || skill.catagory === activCatag
+    );
+    
     return (
         <section id="skills" className="py-24 px-4 relative bg-secondary/30">
 
@@ -47,8 +55,26 @@ export const SkillsSection = () => {
                     My <span className="text-primary"> Skills</span>
                 </h2>
 
+                <div className="flex flex-wrap justify-center gap-4 mb-12">
+                    {catagories.map((catag, key) => (
+
+                        <button
+                            key={key}
+                            onClick={() => setActivCatag(catag)}
+                            className={cn(
+                                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                                activCatag === catag ? "bg-primary text-primary-foreground" : "bg-secondary/70 text-foreground hover:bg-primary/12"
+
+                            )}
+                        >
+                            {catag}
+                        </button>
+
+                    ))}
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {skills.map((skill, key) => (
+                    {filteredSkills.map((skill, key) => (
                         <div key={key} className="bg-card p-6 rounded-lg shadow-xs card-hover">
 
                             <div className="text-left mb-4">
@@ -64,7 +90,6 @@ export const SkillsSection = () => {
                             <div className="text-right mt-1">
                                 <span className="text-sm text-muted-foreground"> {skill.level}%</span>
                             </div>
-
 
 
                         </div>
