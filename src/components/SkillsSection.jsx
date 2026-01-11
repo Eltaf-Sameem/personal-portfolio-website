@@ -24,7 +24,7 @@ const skills = [
     { name: "TypeScript", level: 80, catagory: "frontend" },
     { name: "Tailwind CSS", level: 80, catagory: "frontend" },
     { name: "Selenium WebDriver/Grid/IDE", level: 90, catagory: "frontend" },
-    { name: "Cypress", level: 80, catagory: "frontend" },
+    { name: "Cypress", level: 70, catagory: "frontend" },
 
 
     //Tools
