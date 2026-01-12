@@ -3,19 +3,28 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 export const ContactSection = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState("Send Message");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        setIsSubmitting(true);
-        setTimeout(() => {
+        
+        try {
             //#TODO add email logic
+            setSubmitStatus("Sending");
+            await new Promise(resolve => setTimeout(resolve, 1500));
 
-            window.alert("Message Sent!")
-            setIsSubmitting(false);
-        }, 1000)
+            setSubmitStatus("Sent");
+            await new Promise(resolve => setTimeout(resolve, 300));
+            alert("Message Sent!");
+
+            setSubmitStatus("Send Message");
+        } catch (err) {
+            setSubmitStatus("Send Message");
+            alert("Failed to send message. Please try again.");
+        }
     }
+
     return (
         <section
             id="contact"
@@ -148,13 +157,13 @@ export const ContactSection = () => {
 
                             <button
                                 type="submit"
-                                disabled={isSubmitting}
+                                disabled={submitStatus === "Sending" || submitStatus === "Sent"}
                                 className={cn(
                                     "cosmic-button w-full flex items-center justify-center gap-2",
 
                                 )}
                             >
-                                {isSubmitting ? "Sending": "Send Message"} <Send size={16} />
+                                {submitStatus} <Send size={16} />
 
                             </button>
 
