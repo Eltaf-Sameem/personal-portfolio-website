@@ -98,7 +98,8 @@ export const ProjectsSection = () => {
             </div>
 
             <div className="text-center mt-12">
-                <a href=""                              /* git hub url */
+                <a href="https://www.google.com"                              /* TODO git hub url */
+                    target="_blank"
                     className="cosmic-button w-fit flex items-center mx-auto gap-2"
                 >
                     Check My Github <ArrowRight size={16} />
