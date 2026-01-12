@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 const skills = [
     //Backend
     { name: "Java", level: 95, catagory: "backend" },
-    { name: "C#", level: 80, catagory: "backend" },
     { name: "Python", level: 90, catagory: "backend" },
+    { name: "C#", level: 80, catagory: "backend" },
     { name: "MySQL", level: 90, catagory: "backend" },
     { name: "MongoDB", level: 70, catagory: "backend" },
     { name: "PostgreSQL", level: 70, catagory: "backend" },
