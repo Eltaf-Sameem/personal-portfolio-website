@@ -47,6 +47,7 @@ export const ContactSection = () => {
         }
     }
 
+
     return (
         <section
             id="contact"
@@ -162,7 +163,6 @@ export const ContactSection = () => {
                             data-netlify="true"
                             onSubmit={handleSubmit}
                         >
-
                             <input type="hidden" name="form-name" value="contact" />
 
                             <div>
