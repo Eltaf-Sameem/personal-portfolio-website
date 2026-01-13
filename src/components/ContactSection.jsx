@@ -159,6 +159,7 @@ export const ContactSection = () => {
                             method="POST"
                             data-netlify="true"
                             onSubmit={handleSubmit}
+                            action="/thank-you"
                         >
                             <input type="hidden" name="form-name" value="contact" />
 
