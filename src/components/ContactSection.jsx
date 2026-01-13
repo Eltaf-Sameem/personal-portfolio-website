@@ -1,27 +1,36 @@
 import { Github, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { toast } from "sonner";
 
 export const ContactSection = () => {
     const [submitStatus, setSubmitStatus] = useState("Send Message");
+    const formRef = useRef(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        
+
         try {
             //#TODO add email logic
+            const toastId = toast.loading("Sending...")
+
             setSubmitStatus("Sending");
             await new Promise(resolve => setTimeout(resolve, 1500));
 
+            toast.success("Message Sent!", { id: toastId });
             setSubmitStatus("Sent");
-            await new Promise(resolve => setTimeout(resolve, 300));
-            alert("Message Sent!");
+            if (formRef.current) {
+                formRef.current.reset();
+            }
+            await new Promise(resolve => setTimeout(resolve, 1000));
 
             setSubmitStatus("Send Message");
         } catch (err) {
+            toast.error("Failed to send message. Please try again.", {
+                id: toastId,
+            });
             setSubmitStatus("Send Message");
-            alert("Failed to send message. Please try again.");
         }
     }
 
@@ -126,7 +135,7 @@ export const ContactSection = () => {
 
                     <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
                         <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
-                        <form className="space-y-6">
+                        <form className="space-y-6" ref={formRef}>
 
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium mb-2 text-left"> Your Name</label>
