@@ -12,8 +12,8 @@ export const ContactSection = () => {
         if (!formRef.current) return;
 
         const formData = new FormData(formRef.current);
-        
-        
+
+
         const toastId = toast.loading("Sending...")
         setSubmitStatus("Sending");
         try {
@@ -24,15 +24,12 @@ export const ContactSection = () => {
                 body: new URLSearchParams(formData).toString(),
             });
 
-
-            // await new Promise(resolve => setTimeout(resolve, 1500));
-
             if (response.ok) {
                 toast.success("Message Sent!", { id: toastId });
                 setSubmitStatus("Sent");
 
                 formRef.current.reset();
-                
+
                 await new Promise(resolve => setTimeout(resolve, 1000));
                 setSubmitStatus("Send Message");
             } else {
