@@ -12,11 +12,11 @@ export const ContactSection = () => {
         if (!formRef.current) return;
 
         const formData = new FormData(formRef.current);
-
+        
+        
+        const toastId = toast.loading("Sending...")
+        setSubmitStatus("Sending");
         try {
-            const toastId = toast.loading("Sending...")
-            setSubmitStatus("Sending");
-
             //#TODO add email logic
             const response = await fetch("/", {
                 method: "POST",
