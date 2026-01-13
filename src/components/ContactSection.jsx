@@ -160,7 +160,6 @@ export const ContactSection = () => {
                                 disabled={submitStatus === "Sending" || submitStatus === "Sent"}
                                 className={cn(
                                     "cosmic-button w-full flex items-center justify-center gap-2",
-
                                 )}
                             >
                                 {submitStatus} <Send size={16} />
