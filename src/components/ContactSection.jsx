@@ -1,7 +1,7 @@
 import { Github, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useRef, useState } from "react";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 
 export const ContactSection = () => {
     const [submitStatus, setSubmitStatus] = useState("Send Message");
@@ -9,23 +9,36 @@ export const ContactSection = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!formRef.current) return;
 
+        const formData = new FormData(formRef.current);
 
         try {
-            //#TODO add email logic
             const toastId = toast.loading("Sending...")
-
             setSubmitStatus("Sending");
-            await new Promise(resolve => setTimeout(resolve, 1500));
 
-            toast.success("Message Sent!", { id: toastId });
-            setSubmitStatus("Sent");
-            if (formRef.current) {
+            //#TODO add email logic
+            const response = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString(),
+            });
+
+
+            // await new Promise(resolve => setTimeout(resolve, 1500));
+
+            if (response.ok) {
+                toast.success("Message Sent!", { id: toastId });
+                setSubmitStatus("Sent");
+
                 formRef.current.reset();
+                
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                setSubmitStatus("Send Message");
+            } else {
+                throw new Error("Form submission failed");
             }
-            await new Promise(resolve => setTimeout(resolve, 1000));
 
-            setSubmitStatus("Send Message");
         } catch (err) {
             toast.error("Failed to send message. Please try again.", {
                 id: toastId,
@@ -39,6 +52,13 @@ export const ContactSection = () => {
             id="contact"
             className="py-24 px-4 relative bg-secondary/30"
         >
+            <Toaster
+                position='top-center'
+                richColors
+                closeButton
+                expand={true}
+            />
+
             <div className="container mx-auto max-w-5xl">
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
@@ -118,11 +138,11 @@ export const ContactSection = () => {
                             <h4 className="font-medium mb-4"> Connect with Me</h4>
                             <div className="flex space-x-4 justify-center">
 
-                                <a href="#" target="_blank">
+                                <a href="#" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                                     <Linkedin />
                                 </a>
 
-                                <a href="https://github.com/Eltaf-Sameem" target="_blank">
+                                <a href="https://github.com/Eltaf-Sameem" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                                     <Github />
                                 </a>
 
@@ -133,9 +153,17 @@ export const ContactSection = () => {
                     </div>
 
 
-                    <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
+                    <div className="bg-card p-8 rounded-lg shadow-xs">
                         <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
-                        <form className="space-y-6" ref={formRef}>
+                        <form className="space-y-6"
+                            ref={formRef}
+                            name="contact"
+                            method="POST"
+                            data-netlify="true"
+                            onSubmit={handleSubmit}
+                        >
+
+                            <input type="hidden" name="form-name" value="contact" />
 
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium mb-2 text-left"> Your Name</label>
