@@ -3,10 +3,10 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
     {
         id: 1,
-        title: "Project 1 title",
-        description: "decription of Project 1 has to be very beautiful and efficient and user friendly.",
+        title: "Test Automation Framework",
+        description: "Hybrid test automation framework with Java, Selenium WebDriver, Karate API, and Cucumber, enabling UI, API, and database testing across frontend and backend.",
         image: "/projects/project1.png", //project path
-        tags: ["React", "TailwindCSS", "Supabase"],
+        tags: ["Java", "Selenium", "Karate API", "JDBC"],
         demoUrl: "#",
         githubUrl: "#",
     },
@@ -57,7 +57,7 @@ export const ProjectsSection = () => {
                             />
                         </div>
 
-                        <div className="p-6">
+                        <div className="py-6 px-4">
                             <div className="flex justify-center flex-wrap gap-2 mb-4">
                                 {project.tags.map((tag) => (
                                     <span
