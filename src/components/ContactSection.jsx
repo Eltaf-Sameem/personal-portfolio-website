@@ -124,7 +124,7 @@ export const ContactSection = () => {
                                     <a
                                         className="text-muted-foreground hover:text-primary transition-colors"
                                     >
-                                        Manassas, VA, USA
+                                        Virginia, United States
                                     </a>
                                 </div>
 

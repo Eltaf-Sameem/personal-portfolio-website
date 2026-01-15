@@ -1,4 +1,4 @@
-import { Briefcase, Code, User } from "lucide-react";
+import { Briefcase, BugOff, Code} from "lucide-react";
 
 export const AboutSection = () => {
     return (
@@ -14,18 +14,18 @@ export const AboutSection = () => {
 
                     <div className="space-y-6">
                         <h3 className="text-2xl font-semibold">
-                            Passionate Web Developer & Tech Creator
+                            Results-Driven Software Developer
                         </h3>
 
                         <p className="text-muted-foreground">
-                            With over 5 years of experience in web development, I specialize in creating
-                            responsive, accessible, and performant web applications using modern technologies.
+                            Hands-on experience in development and testing, building modern and interactive web applications 
+                            using React.js, TailwindCSS, and Vite, as well as creating hybrid test automation frameworks utilizing 
+                            Java, Selenium, Karate API, and Cucumber, with CI/CD pipeline automation via Jenkins and Maven.
                         </p>
 
                         <p className="text-muted-foreground">
-                            I'm passionate about creating elegant solutions to complex problems, and I'm constantly
-                            learning new technologies and techniques to stay at the forefront of the ever-evolving
-                            web landscape.
+                            Constantly learning new technologies and techniques to stay at the forefront of the ever-evolving
+                            tech landscape. On the off-hours, likes excersing, hiking, and, especially, skiing.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -34,7 +34,7 @@ export const AboutSection = () => {
                             </a>
 
                             <a
-                                href=""
+                                href="/public/officialResume.pdf" target="_blank"
                                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
                             > {/* add resume link */}
                                 Download Resume
@@ -51,7 +51,7 @@ export const AboutSection = () => {
                                 </div>
 
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-lg"> Web Development</h4>
+                                    <h4 className="font-semibold text-lg"> Software Development</h4>
                                     <p className="text-muted-foreground">Creating responsive websites and web applications with mordern frameworks.</p>
                                 </div>
                             </div>
@@ -60,12 +60,12 @@ export const AboutSection = () => {
                         <div className="gradient-border p-6 card-hover">
                             <div className="flex items-start gap-4">
                                 <div className="p-3 rounded-full bg-primary/10">
-                                    <User className="h-6 w-6 text-primary" />
+                                    <BugOff className="h-6 w-6 text-primary" />
                                 </div>
 
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-lg"> UI/UX Design</h4>
-                                    <p className="text-muted-foreground">Designing intuitive user interfaces and seamless user experiences.</p>
+                                    <h4 className="font-semibold text-lg"> Software Testing</h4>
+                                    <p className="text-muted-foreground">Developing and maintaining automated test suites for UI and API testing to validate functionality.</p>
                                 </div>
                             </div>
                         </div>
