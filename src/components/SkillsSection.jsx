@@ -23,6 +23,7 @@ const skills = [
     { name: "React.js", level: 80, catagory: "frontend" },
     { name: "TypeScript", level: 80, catagory: "frontend" },
     { name: "Tailwind CSS", level: 80, catagory: "frontend" },
+    { name: "JavaScript eXtension (JSX)", level: 75, catagory: "frontend" },
     { name: "Selenium WebDriver/Grid/IDE", level: 90, catagory: "frontend" },
     { name: "Cypress", level: 70, catagory: "frontend" },
 
@@ -31,12 +32,12 @@ const skills = [
     { name: "Jenkins CI/CD", level: 80, catagory: "tools" },
     { name: "Git/Github", level: 90, catagory: "tools" },
     { name: "Maven", level: 85, catagory: "tools" },
+    { name: "Vite", level: 80, catagory: "tools" },
     { name: "Cucumber BDD", level: 85, catagory: "tools" },
     { name: "TestNG", level: 85, catagory: "tools" },
     { name: "XML", level: 85, catagory: "tools" },
     { name: "JUnit", level: 85, catagory: "tools" },
     { name: "Jira", level: 80, catagory: "tools" },
-    { name: "Xray", level: 80, catagory: "tools" },
 ];
 
 const catagories = ["all", "frontend", "backend", "tools"];
