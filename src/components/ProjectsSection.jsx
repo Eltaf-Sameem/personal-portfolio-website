@@ -5,16 +5,16 @@ const projects = [
         id: 1,
         title: "Test Automation Framework",
         description: "Hybrid test automation framework with Java, Selenium WebDriver, Karate API, and Cucumber, enabling UI, API, and database testing across frontend and backend.",
-        image: "/projects/project1.png", //project path
+        image: "/projects/project1.png", 
         tags: ["Java", "Selenium", "Karate API", "JDBC"],
-        demoUrl: "#",
-        githubUrl: "#",
+        demoUrl: "#",     //demo
+        githubUrl: "#",  //github url
     },
     {
         id: 2,
         title: "Portfolio Website",
         description: "Single-page website using JavaScript and React, implementing client-side routing with React Router and TailwindCSS for styling and animating.",
-        image: "/projects/portfolio-website.png", //project path
+        image: "/projects/portfolio-website.png", 
         tags: ["JavaScript", "React", "TailwindCSS", "Vite"],
         demoUrl: "https://eltaf-sameem.netlify.app/",
         githubUrl: "https://github.com/Eltaf-Sameem/personal-portfolio-website",
