@@ -12,22 +12,23 @@ const projects = [
     },
     {
         id: 2,
-        title: "Project 2 title",
-        description: "Description of Project 2 can't forget about it's security and reliablity. Makes users happy.",
-        image: "/projects/project2.png", //project path
-        tags: ["TypeScript", "Next.js", "HTML"],
-        demoUrl: "#",
-        githubUrl: "#",
+        title: "Portfolio Website",
+        description: "Single-page website using JavaScript and React, implementing client-side routing with React Router and TailwindCSS for styling and animating.",
+        image: "/projects/portfolio-website.png", //project path
+        tags: ["JavaScript", "React", "TailwindCSS", "Vite"],
+        demoUrl: "https://eltaf-sameem.netlify.app/",
+        githubUrl: "https://github.com/Eltaf-Sameem/personal-portfolio-website",
     },
     {
         id: 3,
-        title: "Project 3 title",
-        description: "Description of Project 3 ofcourse it is legendary. It is a project never seen before.",
-        image: "/projects/project3.png", //project path
-        tags: ["React", "Node.js", "MySQL"],
+        title: "Future Project",
+        description: "Spring Boot backend that communicates with Python ML services for model inference, exposing prediction endpoints via REST APIs",
+        image: "/projects/project1.png", //project path
+        tags: ["Python", "Java", "Spring Boot"],
         demoUrl: "#",
         githubUrl: "#",
     },
+    
 ];
 
 export const ProjectsSection = () => {
@@ -47,7 +48,7 @@ export const ProjectsSection = () => {
                 {projects.map((project, key) => (
                     <div
                         key={key}
-                        className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover "
+                        className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
                     >
 
                         <div className="h-48 overflow-hidden">
@@ -73,7 +74,7 @@ export const ProjectsSection = () => {
 
                             <div className="flex justify-between items-center">
                                 <div className="flex space-x-3">
-
+                                    
                                     <a href={project.demoUrl}
                                         target="_blank"
                                         className="text-foreground/80 hover:text-primary transition-colors duration-300"
@@ -98,7 +99,7 @@ export const ProjectsSection = () => {
             </div>
 
             <div className="text-center mt-12">
-                <a href="https://www.google.com"                              /* TODO git hub url */
+                <a href="https://github.com/Eltaf-Sameem"                         
                     target="_blank"
                     className="cosmic-button w-fit flex items-center mx-auto gap-2"
                 >
