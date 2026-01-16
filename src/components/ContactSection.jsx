@@ -136,7 +136,7 @@ export const ContactSection = () => {
                             <h4 className="font-medium mb-4"> Connect with Me</h4>
                             <div className="flex space-x-4 justify-center">
 
-                                <a href="https://www.linkedin.com/in/eltaf-sameem-63a0543a6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGE1qPskMSym3VCl%2F04sMGQ%3D%3D"
+                                <a href="https://www.linkedin.com/in/eltaf-sameem-63a0543a6/"
                                     target="_blank"
                                     className="text-muted-foreground hover:text-primary transition-colors"
                                 >
