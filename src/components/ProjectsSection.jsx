@@ -8,7 +8,7 @@ const projects = [
         image: "/projects/test-framework.png", 
         tags: ["Java", "Selenium", "Karate API", "JDBC"],
         demoUrl: "https://youtu.be/N-AMBoqQTng",     //demo
-        githubUrl: "#",  //github url
+        githubUrl: "https://github.com/Eltaf-Sameem/Test-Automation-Framework",  //github url
     },
     {
         id: 2,
