@@ -5,9 +5,9 @@ const projects = [
         id: 1,
         title: "Test Automation Framework",
         description: "Hybrid test automation framework with Java, Selenium WebDriver, Karate API, and Cucumber, enabling UI, API, and database testing across frontend and backend.",
-        image: "/projects/project1.png", 
+        image: "/projects/test-framework.png", 
         tags: ["Java", "Selenium", "Karate API", "JDBC"],
-        demoUrl: "#",     //demo
+        demoUrl: "https://youtu.be/N-AMBoqQTng",     //demo
         githubUrl: "#",  //github url
     },
     {
