@@ -21,12 +21,12 @@ const projects = [
     },
     {
         id: 3,
-        title: "Future Project",
+        title: "Sameem Store",
         description: "Spring Boot backend that communicates with Python ML services for model inference, exposing prediction endpoints via REST APIs",
-        image: "/projects/project1.png", //project path
-        tags: ["Python", "Java", "Spring Boot"],
-        demoUrl: "#",
-        githubUrl: "#",
+        image: "/projects/sameem-store.png", //project path
+        tags: ["React Router", "React", "CSS", "REST API"],
+        demoUrl: "https://sameem-store.vercel.app/",
+        githubUrl: "https://github.com/Eltaf-Sameem/Shopping-Website",
     },
     
 ];
