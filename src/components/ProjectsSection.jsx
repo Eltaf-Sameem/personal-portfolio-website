@@ -7,8 +7,8 @@ const projects = [
         description: "Hybrid test automation framework with Java, Selenium WebDriver, Karate API, and Cucumber, enabling UI, API, and database testing across frontend and backend.",
         image: "/projects/test-framework.png", 
         tags: ["Java", "Selenium", "Karate API", "JDBC"],
-        demoUrl: "https://youtu.be/N-AMBoqQTng",     //demo
-        githubUrl: "https://github.com/Eltaf-Sameem/Test-Automation-Framework",  //github url
+        demoUrl: "https://youtu.be/N-AMBoqQTng",     
+        githubUrl: "https://github.com/Eltaf-Sameem/Test-Automation-Framework",  
     },
     {
         id: 2,
@@ -22,9 +22,9 @@ const projects = [
     {
         id: 3,
         title: "Sameem Store",
-        description: "Spring Boot backend that communicates with Python ML services for model inference, exposing prediction endpoints via REST APIs",
-        image: "/projects/sameem-store.png", //project path
-        tags: ["React Router", "React", "CSS", "REST API"],
+        description: "React-based e-commerce application with client-side routing and REST API integration to manage products, user authentication, and shopping cart functionality across multiple pages.",
+        image: "/projects/sameem-store.png", 
+        tags: ["React Router", "REST API", "CSS", "React"],
         demoUrl: "https://sameem-store.vercel.app/",
         githubUrl: "https://github.com/Eltaf-Sameem/Shopping-Website",
     },
